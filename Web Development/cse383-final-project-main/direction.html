@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Bootstrap Css -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!--JQuery Import-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        
+		<link rel="stylesheet" href="direction.css">
+        <script src="direction.js?rev=123"></script>
+
+        <title>Direction</title>
+	</head>
+    <body>
+            <div class="container">
+                <div class="navbar">
+                     <nav>
+                         <ul id="menuList">
+                             <li><a href="final.html">Home</a></li>
+                             <li><a href="direction.html">Direction</a></li>
+                             <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <img src="menu.png" class="menu-icon" onclick="togglemenu()">
+                </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-mid-4">
+                    <label for="start">Start:</label>
+                    <input type="text" id="start" name="start" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-mid-4">
+                    <label for="end">End:</label>
+                    <input type="text" id="end" name="end" required>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="route">Route:</label>
+                    <select name="route" id="route" required>
+                        <option>--Choese One--</option>
+                        <option value="Fastest">Fastest</option>
+                        <option value="Shortest">Shortest</option>
+                        <option value="Eco">Eco</option>
+                        <option value="Thrilling">Thrilling</option>
+                    </select>
+                </div>
+                    <div class="col-sm-5">
+                        <label for="mode" class="radio">Mode of Travel</label><br>
+							<input type="radio" id="car" name="mode" value="car" required>Car
+							<input type="radio" id="truck" name="mode" value="truck" required>Truck
+							<input type="radio" id="taxi" name="mode" value="taxi" required>Taxi
+							<input type="radio" id="bus" name="mode" value="bus" required>Bus
+							<input type="radio" id="van" name="mode" value="van" required>Van
+							<input type="radio" id="motorcycle" name="mode" value="motorcycle" required>Motorcycle
+                            <input type="radio" id="bicycle" name="mode" value="bicycle" required>Bicycle
+                            <input type="radio" id="pedestrian" name="mode" value="pedestrian" required>Pedestrian
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="hill" class="radio">Hilliness:</label>
+                        <input type="radio" id="low" name="hill" value="low" required>Low
+                        <input type="radio" id="normal" name="hill" value="normal" required>Normal
+                        <input type="radio" id="high" name="hill" value="high" required>High
+                    </div>
+            </div>
+            
+            <div class="container">
+                <br><br>
+                <div class="center">
+                    <button class="btn btn-primary" id="submit">Search</button>
+                </div>
+            </div>
+
+
+            <div class="container" id="Summary">
+
+		    <h4>Instruction</h4>
+		            <br>
+		        <table class="table">
+			        <tr>
+    				    <th>Distance (m)</th>
+    				    <th>Time Required (s)</th>
+    				    <th>Traffic Delay (s)</th>
+  			        </tr>
+                    <tr>
+                            <td><span id="distance"></span></td>
+                            <td><span id="time"></span></td>
+                            <td><span id="delay"></span></td>
+                    </tr>
+		        </table>
+		            <br>
+                    <ol class="list-group-item list-group-item-action" id="list">
+                        <span id="leg"></span>
+                    </ol>
+            
+                    <br><hr><br>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+        <script>
+            var menuList = document.getElementById("menuList");
+            menuList.style.maxHeight = "0px";
+
+            function togglemenu() {
+                if( menuList.style.maxHeight == "0px") {
+                    menuList.style.maxHeight = "130px";
+                }
+                else {
+                    menuList.style.maxHeight = "0px";
+                }
+            }
+        </script>
+    </body>
+</html>
